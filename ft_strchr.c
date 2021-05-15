@@ -6,11 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 15:19:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/14 16:33:55 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/15 09:03:36 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{

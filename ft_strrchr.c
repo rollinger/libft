@@ -6,13 +6,13 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:20:05 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/14 16:41:12 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/15 09:04:21 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *current;
+	char	*current;
 
 	current = 0;
 	while (*s != '\0')
