@@ -2,11 +2,11 @@
 NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 
-sources = ft_isalpha.c ft_isdigit.c ft_isalnum.c
+sources = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c
 headers = libft.h
 
 $(NAME):
-	gcc $(FLAGS) -o $(NAME) $(headers) $(sources)
+	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources)
 
 all: $(NAME)
 
