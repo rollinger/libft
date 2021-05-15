@@ -3,9 +3,10 @@ NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 
 objects = ft_isalpha.o ft_isdigit.o ft_isalnum.o
+headers = libft.h
 
 $(NAME) : $(objects)
-	gcc $(FLAGS) -o $(NAME) $(objects)
+	gcc $(FLAGS) -o $(NAME) $(headers) $(objects)
 
 all : prerequisites
 	receipt
@@ -25,12 +26,12 @@ fclean : prerequisites
 re : prerequisites
 	receipt
 
-ft_isalpha.o : ft_isupper.c ft_islower.c
-	gcc -c ft_isalpha.cc
+ft_isalpha.o : libft.h ft_isupper.c ft_islower.c
+	gcc $(FLAGS) -c ft_isalpha.c
 ft_isdigit.o :
-	gcc -c ft_isdigit.c
-ft_isalnum.o :
-	gcc -c ft_isalnum.c
+	gcc $(FLAGS) -c ft_isdigit.c
+ft_isalnum.o : libft.h ft_isalpha.c ft_isdigit.c
+	gcc $(FLAGS) -c ft_isalnum.c
 
 #ft_isspace.c, ft_isupper.c, ft_islower.c,
 #, ft_isascii.c, ft_isprint.c, ft_tolower.c, ft_toupper.c, \
