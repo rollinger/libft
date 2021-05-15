@@ -6,12 +6,12 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:19:18 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/15 09:11:01 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/15 16:09:55 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_LIBFT_H
-# define FT_LIBFT_H
+#ifndef LIBFT_H
+# define LIBFT_H
 # include <unistd.h>
 
 int		ft_isalpha(int c);
