@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 11:48:12 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 13:30:06 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/18 13:27:05 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/18 22:11:59 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 /*
-* The  memcpy() function copies n bytes from memory area src to memory area
-* dest. The memory areas must not overlap.  Use memmove(3) if the memory areas
-* do overlap. The memcpy() function returns a pointer to dest.
+* The memccpy() function copies no more than n bytes from memory area src to
+* memory area dest, stopping when the character c is found. If the memory areas
+* overlap, the results are undefined.
+* The memccpy() function returns a pointer to the next character in dest after
+* c, or NULL if c was not found in the first n characters of src.
 */
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	unsigned char	*m;
-
-	m = dest;
-	while (n)
-	{
-		*m = *(unsigned char *)src;
-		++m;
-		++src;
-		--n;
-	}
-	return (dest);
+	return ;
 }

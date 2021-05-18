@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 11:48:12 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 13:30:06 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/18 22:16:01 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/18 22:20:49 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+size_t	ft_strlen(const char *s);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+
 /*
-* The  memcpy() function copies n bytes from memory area src to memory area
-* dest. The memory areas must not overlap.  Use memmove(3) if the memory areas
-* do overlap. The memcpy() function returns a pointer to dest.
+* Description
 */
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned char	*m;
+	size_t	buf_len;
+	size_t	src_len;
 
-	m = dest;
-	while (n)
+	src_len = ft_strlen(src);
+	if (size)
 	{
-		*m = *(unsigned char *)src;
-		++m;
-		++src;
-		--n;
+		if (src_len >= size)
+			buf_len = size - 1;
+		else
+			buf_len = src_len;
+		ft_memcpy(dest, src, buf_len);
+		dest[buf_len] = '\0';
 	}
-	return (dest);
+	return (src_len);
 }
