@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:19:18 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:33:42 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/18 23:07:14 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ char	*ft_strnstr(char *haystack, char *needle, size_t n);
 size_t	ft_strlcat(char *dest, char *src, size_t size);
 size_t	ft_strlcpy(char *dest, char *src, size_t size);
 int		ft_atoi(char *str);
+void	ft_bzero(void *s, size_t n);
+char	*ft_strdup(const char *s);
 
 #endif
