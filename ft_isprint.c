@@ -6,15 +6,13 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 19:19:41 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/13 20:26:48 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/18 09:30:42 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c);
-
 int	ft_isprint(int c)
 {
-	if ((c >= ' ' && c <= '~') || ft_isspace(c))
+	if ((c >= ' ' && c <= '~'))
 		return (1);
 	return (0);
 }

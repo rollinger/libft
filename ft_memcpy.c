@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 17:11:46 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 10:31:14 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/18 11:48:12 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/18 12:18:21 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+/*
+* The  memcpy() function copies n bytes from memory area src to memory area
+* dest. The memory areas must not overlap.  Use memmove(3) if the memory areas
+* do overlap. The memcpy() function returns a pointer to dest.
+*/
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	return (ft_memcmp((void *)s1, (void *)s2, n));
+	unsigned char	*m;
+
+	m = dest;
+	while (n)
+	{
+		*m = *(unsigned char *)src;
+		++m;
+		++src;
+		--n;
+	}
+	return (dest);
 }

@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 17:11:46 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 10:31:14 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/18 10:33:01 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/18 11:38:36 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+/*
+* The memset() function fills the first n bytes of the memory area pointed to
+* by s with the constant byte c.
+*/
+void	*ft_memset(void *s, int c, size_t n)
 {
-	return (ft_memcmp((void *)s1, (void *)s2, n));
+	unsigned char	*m;
+
+	m = s;
+	while (n)
+	{
+		*m = (unsigned char) c;
+		m++;
+		n--;
+	}
+	return (s);
 }
