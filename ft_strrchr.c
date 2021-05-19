@@ -6,10 +6,18 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:20:05 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/15 09:04:21 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:07:25 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+* The strrchr() function returns a pointer to the last occurrence of the
+* character c in the string s.
+* RETURN: The  strchr()  and strrchr() functions return a pointer to the matched
+* character or NULL if the character is not found. The terminating null byte is
+* considered part of the string, so that if c is specified as '\0', these
+* functions return a pointer to the terminator.
+*/
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*current;
@@ -18,10 +26,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			current = ((void *)s);
+			current = ((char *)s);
 		++s;
 	}
 	if (c == '\0')
-		return ((void *)s);
+		return ((char *)s);
 	return (current);
 }

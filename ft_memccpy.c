@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:27:05 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:11:59 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/19 12:25:55 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,17 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	return ;
+	unsigned char	*m;
+
+	m = dest;
+	while (n)
+	{
+		*m = *(unsigned char *)src;
+		if (*m == (unsigned char)c)
+			return (++m);
+		++m;
+		++src;
+		--n;
+	}
+	return (NULL);
 }

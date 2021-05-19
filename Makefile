@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/19 10:33:17 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/19 12:04:41 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ sources = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_isspace.c ft_isupper.c ft_islower.c ft_memcmp.c ft_memset.c ft_memcpy.c \
 	ft_memmove.c ft_memchr.c ft_strnstr.c ft_strlcat.c ft_strlcpy.c ft_atoi.c \
 	ft_bzero.c ft_strdup.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-	ft_putnbr_fd.c
-	#ft_memccpy.c
+	ft_putnbr_fd.c ft_calloc.c ft_memccpy.c
 headers = libft.h
 
 $(NAME):

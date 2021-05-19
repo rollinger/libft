@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:05:04 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/19 14:32:25 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,28 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /*
 * man strstr - but str-n-str not found
-* The strstr() function finds the first occurrence of the substring needle in
-the string haystack.  The terminating null bytes ('\0') are not compared.
+* The strstr() function locates the first occurrence of the string s2
+* (excluding the terminating null character) in string s1 and returns a pointer
+* to the located string, or a null pointer if the string is not found. If s2
+* points to a string with zero length (that is, the string ""), the function
+* returns s1.
+*
+* The strnstr() function locates the first occurrence of the null-terminated
+* string s2 in the string s1, where not more than n characters are searched.
+* Characters that appear after a ‘\0’ character are not searched
 */
-char	*ft_strnstr(char *haystack, char *needle, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	unsigned int	uint_len_n;
-	unsigned int	uint_len_h;
+	size_t	len_s2;
 
-	uint_len_n = ft_strlen(needle);
-	if (uint_len_n == 0)
-		return (haystack);
-	uint_len_h = ft_strlen(haystack);
-	while (n && uint_len_h >= uint_len_n)
+	len_s2 = ft_strlen(s2);
+	if (len_s2 == 0)
+		return ((char *)s1);
+	while (n && n >= len_s2)
 	{
-		uint_len_h--;
-		if (ft_strncmp(haystack, needle, uint_len_n) == 0)
-			return (haystack);
-		haystack++;
+		if (ft_strncmp(s1, s2, len_s2) == 0)
+			return ((char *)s1);
+		++s1,
 		--n;
 	}
 	return (0);
