@@ -6,14 +6,14 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:06:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 17:14:36 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/19 18:05:59 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
 
 /*
 * The strlcat() function appends at most (dstsize-strlen(dst)-1) characters of
@@ -35,13 +35,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
-	if (dest_len >= size)
-		return (0);
 	dest += dest_len;
-	size -= dest_len;
-	if (src_len >= size)
-		src_len = size - 1;
-	ft_memcpy(dest, src, src_len);
-	dest[size] = '\0';
+	ft_strlcpy(dest, src, size - dest_len);
 	return (dest_len + src_len);
 }

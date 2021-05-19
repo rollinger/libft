@@ -1,0 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/19 17:28:09 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/19 18:18:33 by prolling         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+void	*malloc(size_t size);
+size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *dest, char *src, size_t size);
+size_t	ft_strlcat(char *dest, char *src, size_t size);
+
+/*
+* Allocates (with malloc(3)) and returns a new string, which is the result of
+* the concatenation of ’s1’ and ’s2’.
+* Returns The new string. NULL if the allocation fails.
+*/
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*joined;
+
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	joined = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	ft_strlcpy(joined, (char *)s1, len_s1);
+	ft_strlcat(joined, (char *)s2, len_s2);
+	return (joined);
+}
