@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 17:28:09 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 18:18:33 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:49:43 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);
 	joined = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
-	ft_strlcpy(joined, (char *)s1, len_s1);
-	ft_strlcat(joined, (char *)s2, len_s2);
+	ft_strlcpy(joined, (char *)s1, len_s1 + 1);
+	ft_strlcat(joined, (char *)s2, (len_s1 + len_s2 + 1));
 	return (joined);
 }
