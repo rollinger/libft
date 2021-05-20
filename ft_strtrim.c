@@ -6,16 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:44:26 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 11:01:25 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 18:07:27 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	*malloc(size_t size);
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-void	*ft_memchr(const void *s, int c, size_t n);
+#include "libft.h"
 
 /*
 * Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters
@@ -24,37 +19,61 @@ void	*ft_memchr(const void *s, int c, size_t n);
 * #2. The reference set of characters to trim.
 * Returns: The trimmed string. NULL if the allocation fails.
 * [m1,m2,ca,cb,m2,cd,ce,m3] => [ca,cb,m2,cd,ce]
-* 1. temp cpy
-* 2. write 0 at the beginning matches (until first non match occurred)
-* 3. same as 2. just from the end.
-* 4. write non null characters to result and finsih off with null at the end.
-* 5. free cpy and return result
+* 1. left trim (contains strspn to calculate the length of the set chars)
+* 2. right trim
+* 3. return the string
+* for strspn see man strspn
+*/
+
+static size_t	ft_strspn(const char *s, const char *accept)
+{
+	size_t	len;
+
+	while (ft_strchr(accept, (int)*s) != 0)
+	{
+		++s;
+		++len;
+	}
+	return (len);
+}
+
+static char	*ft_lstrtrim(char *str, const char *set)
+{
+	size_t	totrim;
+	size_t	len;
+
+	totrim = ft_strspn(str, set);
+	if (totrim > 0)
+	{
+		len = ft_strlen(str);
+		if (totrim == len)
+			str[0] = '\0';
+		else
+			ft_memmove(str, str + totrim, len + 1 - totrim);
+	}
+	return (str);
+}
+
+static char	*ft_rstrtrim(char *str, const char *set)
+{
+	int	i;
+
+	i = ft_strlen(str) - 1;
+	while (i >= 0 && ft_strchr(set, str[i]) != 0)
+	{
+		str[i] = '\0';
+		--i;
+	}
+	return (str);
+}
+
+/*
+* return (ft_lstrtrim(ft_rstrtrim((char *)s1, set), set));
+ft_lstrtrim((char *)s1, set)
+ft_rstrtrim((char *)s1, set)
 */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*cpy;
-	char	*res;
-	size_t	slen;
-	size_t	flen;
-
-	flen = ft_strlen(set);
-	slen = ft_strlen(s1);
-	cpy = ft_strdup(s1);
-	res = malloc(sizeof(char) * (slen + 1));
-	while (ft_memchr(set, *cpy, flen) != 0)
-		*(cpy++) = '\0';
-	cpy = (char *) s1 + slen;
-	while (ft_memchr(set, *cpy, flen) != 0)
-		*(cpy--) = '\0';
-	cpy = (char *) s1;
-	while (slen--)
-	{
-		if (*cpy != '\0')
-			*res = *cpy;
-		++res;
-		++cpy;
-	}
-	*(++res) = '\0';
-	free(cpy);
-	return (res);
+	ft_rstrtrim((char *)s1, set);
+	return (ft_strdup(ft_lstrtrim((char *)s1, set)));
 }

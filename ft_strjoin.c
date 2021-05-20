@@ -6,16 +6,13 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 17:28:09 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 16:49:43 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 16:51:04 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*malloc(size_t size);
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
-size_t	ft_strlcat(char *dest, char *src, size_t size);
 
 /*
 * Allocates (with malloc(3)) and returns a new string, which is the result of
