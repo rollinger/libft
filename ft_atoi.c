@@ -6,14 +6,13 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:25:16 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:33:58 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 13:36:33 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c);
-int	ft_isdigit(int c);
+#include "libft.h"
 
-int	ft_sign(char c)
+static int	ft_sign(char c)
 {
 	if (c == '-')
 		return (1);
@@ -21,7 +20,7 @@ int	ft_sign(char c)
 		return (0);
 }
 
-int	ft_pwr(int nb, int power)
+static int	ft_pwr(int nb, int power)
 {
 	if (nb < 0)
 		return (0);

@@ -6,13 +6,16 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 11:06:37 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/14 11:07:39 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:20:40 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_islower(int c);
+#include "libft.h"
 
-#define LOWUPDIFF 32
+/*
+* Returns the character int value decresed by the difference between upper and
+* lower character (32).
+*/
 
 int	ft_toupper(int c)
 {

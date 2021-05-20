@@ -6,10 +6,13 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 18:52:15 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/13 18:52:25 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:58:41 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+* Returns 1 if c is a digit character
+*/
 int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')

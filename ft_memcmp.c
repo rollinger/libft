@@ -6,11 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 08:56:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 13:51:06 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:37:11 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 * The memcmp() function compares the first n bytes (each interpreted as

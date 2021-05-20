@@ -6,13 +6,15 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 18:44:33 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/13 19:37:36 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 11:58:13 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(int c);
-int	ft_islower(int c);
+#include "libft.h"
 
+/*
+* Returns 1 if c is eigther upper or lowercase alphabetical character
+*/
 int	ft_isalpha(int c)
 {
 	if (ft_isupper(c) || ft_islower(c))

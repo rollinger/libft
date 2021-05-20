@@ -6,15 +6,15 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 10:33:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 11:38:36 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:39:57 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 * The memset() function fills the first n bytes of the memory area pointed to
-* by s with the constant byte c.
+* by s with the constant int c interpreted as a unsigned char.
 */
 void	*ft_memset(void *s, int c, size_t n)
 {

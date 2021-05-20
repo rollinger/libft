@@ -6,14 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 10:18:17 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 18:27:37 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 14:56:31 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+#include "libft.h"
 
 /*
 * Outputs the integer ’n’ to the given file descriptor.

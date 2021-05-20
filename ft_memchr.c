@@ -6,11 +6,12 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:11:57 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 13:26:20 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:38:32 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
+
 /*
 * The  memchr()  function  scans  the  initial n bytes of the memory area
 * pointed to by s for the first instance of c.  Both c and the bytes of the
@@ -18,7 +19,6 @@
 * The memchr() and memrchr() functions return a pointer to the matching byte
 * or NULL if the character does not occur in the given memory area.
 */
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	void	*m;

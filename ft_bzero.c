@@ -6,18 +6,16 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:47:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:50:32 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:50:01 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	*ft_memset(void *s, int c, size_t n);
+#include "libft.h"
 
 /*
 * The  bzero() function erases the data in the n bytes of the memory starting
 * at the location pointed to by s, by writing zeros (bytes containing '\0')
-* to that area.
+* to that area. It returns void.
 */
 void	ft_bzero(void *s, size_t n)
 {

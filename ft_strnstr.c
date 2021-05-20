@@ -6,14 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 14:32:25 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 13:18:08 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+#include "libft.h"
 
 /*
 * man strstr - but str-n-str not found

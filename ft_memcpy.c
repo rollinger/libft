@@ -6,11 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 11:48:12 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 13:30:06 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 12:48:44 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 /*
 * The  memcpy() function copies n bytes from memory area src to memory area
