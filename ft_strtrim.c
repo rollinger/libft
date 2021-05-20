@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:44:26 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 18:07:27 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 18:44:45 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	*ft_lstrtrim(char *str, const char *set)
 		if (totrim == len)
 			str[0] = '\0';
 		else
-			ft_memmove(str, str + totrim, len + 1 - totrim);
+			ft_memmove((void *)str, (void *)(str + totrim), len + 1 - totrim);
 	}
 	return (str);
 }

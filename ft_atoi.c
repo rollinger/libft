@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:25:16 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 13:36:33 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 19:09:20 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(char *str)
 	int_sign = 0;
 	while (ft_isspace(*str))
 		str++;
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 		int_sign += ft_sign(*str++);
 	int_i = 0;
 	while (ft_isdigit(*str))
