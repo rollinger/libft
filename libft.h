@@ -6,15 +6,22 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:19:18 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 14:52:32 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 20:29:12 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include <stdlib.h>
 # include <unistd.h>
 
 # define LOWUPDIFF 32
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isupper(int c);
 int		ft_islower(int c);

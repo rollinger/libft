@@ -6,13 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:19:19 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 13:28:36 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/20 20:18:41 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*malloc(size_t size);
 
 /*
 * The calloc() function allocates memory for an array of nmemb elements of size
