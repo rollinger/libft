@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:32:08 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 20:40:40 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/21 14:14:07 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 */
 t_list	*ft_lstnew(void *content)
 {
-	t_list	new;
+	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
 	if (new)

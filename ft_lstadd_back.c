@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 20:44:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 14:14:59 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/21 18:09:38 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/21 19:42:38 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /*
-* Returns the last element of the list.
+* Adds the element ’new’ at the end of the list. Returns nothing
+* Parameters:
+* #1. The address of a pointer to the first link of a list.
+* #2. The address of a pointer to the element to be added to the list.
 */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+	t_list	*last;
+
+	if (*lst != 0)
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
+	else
+		*lst = new;
+	return ;
 }

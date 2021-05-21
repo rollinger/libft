@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:17:28 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 16:44:11 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/21 16:07:57 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,23 @@ static size_t	ft_countd(int n)
 */
 char	*ft_itoa(int n)
 {
+	size_t	digits;
+	char	*d;
+
+	digits = ft_countd(n);
+	d = (char *)malloc(sizeof(char) * (digits + 1));
+	while (n != 0)
+	{
+		*d = ((n % 10) + '0');
+		n /= 10;
+		++d;
+	}
+	*d = '\0';
+	return (d);
+}
+
+char	*ft_itoa_old(int n)
+{
 	size_t	sign;
 	size_t	digits;
 	char	*d;
@@ -66,8 +83,8 @@ char	*ft_itoa(int n)
 		n /= 10;
 		++d;
 	}
-	while (digits-- > 0)
-		*r = *d--;
+	while ((digits--) > 0)
+		*r++ = *d--;
 	*r = '\0';
 	return (r);
 }
