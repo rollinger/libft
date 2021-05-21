@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:19:19 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 20:18:41 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/21 12:47:34 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*arr;
 
 	arr = malloc(nmemb * size);
-	ft_memset(arr, 0, nmemb * size);
+	if (arr)
+		ft_memset(arr, 0, nmemb * size);
 	return (arr);
 }
