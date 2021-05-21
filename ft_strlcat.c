@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:06:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/19 18:05:59 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/21 08:18:48 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size);
 * The function returns min{dstsize,strlen(dst)}+ strlen(src)
 *
 */
+static int	min(int a, int b)
+{
+	if (a <= b)
+		return (a);
+	else
+		return (b);
+}
+
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	dest_len;
@@ -36,6 +44,7 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
 	dest += dest_len;
-	ft_strlcpy(dest, src, size - dest_len);
-	return (dest_len + src_len);
+	if (size >= dest_len)
+		ft_strlcpy(dest, src, size - dest_len);
+	return (min(size, dest_len) + src_len);
 }
