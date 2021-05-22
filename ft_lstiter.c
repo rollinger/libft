@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:14:57 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 20:32:37 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/21 20:40:38 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 * #2. The adress of the function used to iterate on
 * the list.
 */
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst != NULL)

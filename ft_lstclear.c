@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 19:45:28 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 19:47:06 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/22 08:49:51 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,11 @@
 * #1. The adress of a pointer to an element.
 * #2. The adress of the function used to delete the
 * content of the element.
+(*lst)->next = NULL;
 */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	ft_lstiter(*lst, del);
+	*lst = NULL;
 	return ;
 }
