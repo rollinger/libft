@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/23 21:20:21 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/24 08:33:22 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,9 @@ sources = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_bzero.c ft_strdup.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_atoi.c ft_putnbr_fd.c ft_memccpy.c ft_substr.c ft_strjoin.c \
 	ft_strtrim.c ft_itoa.c ft_split.c ft_strmapi.c
-sources_bonus = ft_lstnew_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
-	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstdelone_bonus.c \
-	ft_lstiter_bonus.c ft_lstclear_bonus.c
+sources_bonus = ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+	ft_lstadd_front.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c
 headers = libft.h
-headers_bonus = libft_bonus.h
 
 SRCOBJ = ${sources:.c.o}
 BONOBJ = ${sources_bonus:.c.o}
