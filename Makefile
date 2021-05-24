@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/24 08:43:47 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/24 10:22:22 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,14 +24,13 @@ sources_bonus = ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 	ft_lstadd_front.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c
 headers = libft.h
 
-SRCOBJ = ${sources:.c.o}
-BONOBJ = ${sources_bonus:.c.o}
-
 $(NAME):
 	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources)
+	ar rcs $(NAME)
 
 bonus:
 	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources) $(sources_bonus)
+	ar rcs $(NAME)
 
 all: $(NAME)
 
