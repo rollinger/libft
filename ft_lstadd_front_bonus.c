@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 22:47:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/23 19:57:57 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/21 18:08:09 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/21 19:40:51 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /*
-* The  bzero() function erases the data in the n bytes of the memory starting
-* at the location pointed to by s, by writing zeros (bytes containing '\0')
-* to that area. It returns void.
+* Adds the element ’new’ at the beginning of the list. Returns nothing.
+* Parameters:
+* #1. The address of a pointer to the first link of a list.
+* #2. The address of a pointer to the element to be added to the list.
 */
-void	ft_bzero(void *s, size_t n)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	unsigned char	*m;
-
-	m = s;
-	while (n--)
-		*(m++) = '\0';
+	new->next = *lst;
+	*lst = new;
 	return ;
 }

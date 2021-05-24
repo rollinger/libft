@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 22:47:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/23 19:57:57 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/20 20:40:50 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/21 14:22:18 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /*
-* The  bzero() function erases the data in the n bytes of the memory starting
-* at the location pointed to by s, by writing zeros (bytes containing '\0')
-* to that area. It returns void.
+* Counts the number of elements in a list. Returns lenght of list
 */
-void	ft_bzero(void *s, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned char	*m;
+	size_t	len;
 
-	m = s;
-	while (n--)
-		*(m++) = '\0';
-	return ;
+	len = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		++len;
+	}
+	return (len);
 }

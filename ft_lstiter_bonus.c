@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/18 22:47:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/23 19:57:57 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/21 20:14:57 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/21 20:40:38 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /*
-* The  bzero() function erases the data in the n bytes of the memory starting
-* at the location pointed to by s, by writing zeros (bytes containing '\0')
-* to that area. It returns void.
+* Iterates the list ’lst’ and applies the function ’f’ to the content of
+* each element.
+* #1. The adress of a pointer to an element.
+* #2. The adress of the function used to iterate on
+* the list.
 */
-void	ft_bzero(void *s, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	unsigned char	*m;
-
-	m = s;
-	while (n--)
-		*(m++) = '\0';
+	while (lst != NULL)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 	return ;
 }
