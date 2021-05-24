@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/24 08:33:22 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/24 08:43:47 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,13 @@ BONOBJ = ${sources_bonus:.c.o}
 $(NAME):
 	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources)
 
-bonus :
+bonus:
+	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources) $(sources_bonus)
 
 all: $(NAME)
 
 clean:
-	rm -f *.o
+	rm -f *.o *.a
 
 fclean: clean
 	rm -f $(NAME)

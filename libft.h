@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 10:19:18 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/24 08:14:56 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/24 09:58:04 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strdup(const char *s);
-
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
