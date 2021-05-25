@@ -6,69 +6,76 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:10:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 07:56:16 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 17:49:05 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_splitcnt(char const *s, char c)
+/*
+* count blocks of words separated by c(s) returns n of blks found
+*/
+static size_t	ft_countwordblocks(char const *s, char c)
 {
-	char	flg;
-	size_t	cnt;
+	size_t	blks;
+	size_t	word;
 
-	if (!s)
-		return (0);
-	cnt = 0;
-	flg = 1;
-	while (*s)
+	blks = 0;
+	word = 0;
+	while (*s != '\0')
 	{
 		if (*s == c)
-			flg = 1;
-		else
+			word = 0;
+		else if ((*s != c) && (word == 0))
 		{
-			(flg == 1) ? cnt++ : cnt;
-			flg = 0;
+			word = 1;
+			++blks;
 		}
-		s++;
+		++s;
 	}
-	return (cnt);
+	return (blks);
 }
 
-static void		ft_freeall(char **ret)
-{
-	int	i;
-
-	i = 0;
-	while (ret[i])
-	{
-		free(ret[i]);
-		i++;
-	}
-	free(ret);
-}
-
-static size_t	ft_strnlen(const char *s, size_t max)
+/*
+* str len that returns if c is found or \0
+*/
+static size_t	ft_strclen(const char *s, char c)
 {
 	size_t	int_len;
 
 	int_len = 0;
-	while ((s[int_len] != '\0') || (int_len > max))
+	while (s[int_len] != '\0' && s[int_len] != c)
 		int_len++;
 	return (int_len);
 }
 
-static char	*ft_strndup(const char *s, size_t n)
+/*
+* Helper function: walking through s and calloc'ing and memcpy'ing the blocks
+* into the **arr. Due to calloc the \0 is there and we can use just memcpy. 
+* [1,2]; 1=>"blck1\0" 2=>"blck2\0"
+*/
+static char	**ft_split_words(char **arr, const char *s, const char c)
 {
-	char	*new;
-	size_t	s_len;
+	int	pos;
+	int	blk_len;
 
-	s_len = ft_strnlen(s, n);
-	new = malloc(sizeof(char) * (s_len + 1));
-	if (!new)
-		return(NULL);
-	ft_strlcpy(new, (char *)s, s_len + 1);
-	return (new);
+	pos = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s)
+		{
+			blk_len = ft_strclen(s, c);
+			arr[pos] = (char *)ft_calloc(blk_len + 1, sizeof(char));
+			if (!arr[pos])
+				return (NULL);
+			ft_memcpy(arr[pos], s, (size_t)blk_len);
+			s += blk_len;
+			pos++;
+		}
+	}
+	return (arr);
 }
 
 /*
@@ -81,32 +88,13 @@ static char	*ft_strndup(const char *s, size_t n)
 */
 char	**ft_split(char const *s, char c)
 {
-	const char		*p;
-	size_t			splitcnt;
-	char			**ret;
-	char			*end;
-	size_t			i;
+	char	**arr;
 
-	splitcnt = ft_splitcnt(s, c);
-	ret = ft_calloc(splitcnt + 1, sizeof(char *));
-	if (!s || !ret)
+	if (s == NULL)
 		return (NULL);
-	i = 0;
-	p = s;
-	while (i < splitcnt)
-	{
-		if (*s != c)
-		{
-			if (!(end = ft_strchr(s, c)))
-				end = (char *)p + ft_strlen(p);
-			if (!(ret[i++] = ft_strndup(s, end - s)))
-			{
-				ft_freeall(ret);
-				return (NULL);
-			}
-			s = end;
-		}
-		s++;
-	}
-	return (ret);
+	arr = (char **)ft_calloc(ft_countwordblocks(s, c) + 1, sizeof(char *));
+	if (arr == NULL)
+		return (NULL);
+	arr = ft_split_words(arr, s, c);
+	return (arr);
 }

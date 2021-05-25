@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/25 08:36:02 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/25 15:14:22 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 CC = gcc
-LIB = ar rcu
+LIB = ar rcs #u
 
 $(NAME): $(OBJ_SWITCH) $(OBJS_OWN)
 	$(LIB) $@ $^
