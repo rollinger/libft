@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 08:53:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 09:33:36 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/13 15:18:03 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/20 11:55:59 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-* Outputs the string c to given file descriptor, followed by a newline.
-*
+* Returns 1 if c is a uppercase alphabetical character
 */
-void	ft_putendl_fd(char *s, int fd)
+int	ft_isupper(int c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
-	return ;
+	if (c >= 'A' && c <= 'Z')
+		return (1);
+	return (0);
 }

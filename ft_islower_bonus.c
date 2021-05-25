@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 08:53:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 09:33:36 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/13 15:18:28 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/20 11:56:11 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-* Outputs the string c to given file descriptor, followed by a newline.
-*
+* Returns 1 if c is a lowercase alphabetical character
 */
-void	ft_putendl_fd(char *s, int fd)
+int	ft_islower(int c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
-	return ;
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
 }

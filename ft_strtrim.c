@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 09:44:26 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 10:09:17 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 09:58:46 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@
 * #2. The reference set of characters to trim.
 * Returns: The trimmed string. NULL if the allocation fails.
 * [m1,m2,ca,cb,m2,cd,ce,m3] => [ca,cb,m2,cd,ce]
-* 1. left trim (contains strspn to calculate the length of the set chars)
-* 2. right trim
-* 3. return the string
-* for strspn see man strspn
+* determines true start and end by strchr s[i] in the sep_buf from both ends of
+* of the string. having alloc mem, it calls strlcpy from start to end +1 and
+* returns the result pointer.
 */
 char	*ft_strtrim(char const *s1, char const *set)
 {

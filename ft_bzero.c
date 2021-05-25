@@ -6,11 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:47:29 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/23 19:57:57 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:45:01 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 /*
 * The  bzero() function erases the data in the n bytes of the memory starting

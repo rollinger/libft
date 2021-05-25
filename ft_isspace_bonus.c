@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/19 08:53:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 09:33:36 by prolling         ###   ########.fr       */
+/*   Created: 2021/05/13 15:19:04 by prolling          #+#    #+#             */
+/*   Updated: 2021/05/20 11:55:09 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
-* Outputs the string c to given file descriptor, followed by a newline.
-*
+* Returns 1 if c is a space character
 */
-void	ft_putendl_fd(char *s, int fd)
+int	ft_isspace(int c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
-	return ;
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f'
+		|| c == '\r')
+		return (1);
+	return (0);
 }

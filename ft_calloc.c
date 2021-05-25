@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 23:19:19 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/24 08:35:13 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 10:50:49 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t			bytes;
 
 	bytes = nmemb * size;
-	arr = malloc(nmemb * size);
+	arr = malloc(bytes);
+	if (!bytes || !arr)
+		return (NULL);
 	m = arr;
 	if (arr)
 		while (bytes--)

@@ -6,11 +6,12 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 18:09:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 19:42:38 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:56:15 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
 * Adds the element ’new’ at the end of the list. Returns nothing
 * Parameters:

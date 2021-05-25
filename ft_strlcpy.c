@@ -6,17 +6,16 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:16:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/18 22:20:49 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 09:46:57 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
+#include "libft.h"
 
 /*
-* Description
+* Strlcpy copies the src string into the dest buffer writing max size bytes and
+* ensures a null termination of the string.
+* size must be therefor called with strlen() + 1
 */
 size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {

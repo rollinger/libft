@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 08:56:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 12:37:11 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 10:58:07 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	c2 = s2;
 	while (n)
 	{
-		if (*c1 < *c2)
-			return (-1);
-		else if (*c1 > *c2)
-			return (1);
+		if (*c1 != *c2)
+			return (*c1 - *c2);
 		if (!*c1 || !*c2)
 			break ;
 		c1++;

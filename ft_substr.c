@@ -6,14 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 17:17:44 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/24 17:38:02 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 10:00:11 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	*malloc(size_t size);
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
+#include "libft.h"
 
 /*
 * Allocates (with malloc(3)) and returns a substring from the string ’s’.
@@ -22,9 +19,11 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size);
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ss;
+	char	*sub;
 
-	ss = malloc(sizeof(char) * (len + 1));
-	ft_strlcpy((char *)ss, (char *)(s + start), len + 1);
-	return (ss);
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!sub)
+		return (NULL);
+	ft_strlcpy(sub, (char *)(s + start), len + 1);
+	return (sub);
 }

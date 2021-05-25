@@ -6,14 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:06:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 08:18:48 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 09:45:21 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dest, char *src, size_t size);
+#include "libft.h"
 
 /*
 * The strlcat() function appends at most (dstsize-strlen(dst)-1) characters of

@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:17:28 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/22 17:08:30 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:55:27 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	*malloc(size_t size);
 * received as an argument. Negative numbers must be handled.
 * Returns: The string representing the integer. NULL if the allocation fails.
 * -123 => ['-','1','2','3','\0']
-*
 */
-
 static size_t	ft_countd(int n)
 {
 	size_t	x;
