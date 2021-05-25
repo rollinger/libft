@@ -6,15 +6,11 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:55:57 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 10:03:28 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:30:36 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*malloc(size_t size);
+#include "libft.h"
 
 /*
 * The  strdup() function returns a pointer to a new string which is a duplicate
@@ -31,7 +27,9 @@ char	*ft_strdup(const char *s)
 	size_t	s_len;
 
 	s_len = ft_strlen(s);
-	new = malloc(sizeof(char) * s_len + 1);
+	new = malloc(sizeof(char) * (s_len + 1));
+	if (!new)
+		return (NULL);
 	ft_memcpy(new, s, s_len + 1);
 	return (new);
 }

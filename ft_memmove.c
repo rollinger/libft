@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 11:37:48 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/23 22:21:29 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 08:09:44 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@
 * and the bytes are then copied from the temporary array to dest. The memmove()
 * function returns a pointer to dest.
 *
+* memcpy if dest has enough space (dest-src >= n)
+* otherwise a reverse write [dest <<< src] from position n to 0.
 */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	void	*temp;
-
-	temp = ft_calloc(n, sizeof(void));
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
+	if (!dest && !src)
+		return (NULL);
+	if ((size_t)(dest - src) >= n)
+		return (ft_memcpy(dest, src, n));
+	while (n--)
+		*((unsigned char *)dest + n) = *((unsigned char *)src + n);
 	return (dest);
 }

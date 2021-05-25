@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 17:35:32 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/24 09:30:35 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 07:36:01 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,31 @@
 * #3. The adress of the function used to delete the content of an element if
 * needed.
 * Return The new list. NULL if the allocation fails.
-*
-* //ft_lstadd_back(pn, ft_lstnew(lst->content));
-*
 */
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new;
-	t_list	*pn;
+	const t_list	*lstp;
+	void			*f_ret;
+	t_list			*lst_ret;
+	t_list			*lst_new;
 
-	new = ft_lstnew(lst->content);
-	pn = new;
-	while (lst != 0)
+	lst_ret = NULL;
+	lst_new = NULL;
+	lstp = lst;
+	while (lstp)
 	{
-		lst = lst->next;
-		pn->next = ft_lstnew(lst->content);
-		pn = pn->next;
+		f_ret = f(lstp->content);
+		if (f_ret)
+		{
+			lst_new = ft_lstnew(f_ret);
+			if (!lst_new)
+			{
+				ft_lstclear(&lst, del);
+				return (NULL);
+			}
+			ft_lstadd_back(&lst_ret, lst_new);
+		}
+		lstp = lstp->next;
 	}
-	ft_lstiter(new, f((void *) ))
-	return (new);
+	return (lst_ret);
 }

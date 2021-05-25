@@ -6,51 +6,69 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:10:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 17:24:31 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 07:56:16 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_countc(char const *s, char c)
+static size_t	ft_splitcnt(char const *s, char c)
 {
-	size_t	n;
+	char	flg;
+	size_t	cnt;
 
-	n = 0;
-	while (*s != 0)
+	if (!s)
+		return (0);
+	cnt = 0;
+	flg = 1;
+	while (*s)
 	{
 		if (*s == c)
-			++n;
-		++s;
+			flg = 1;
+		else
+		{
+			(flg == 1) ? cnt++ : cnt;
+			flg = 0;
+		}
+		s++;
 	}
-	return (n);
+	return (cnt);
 }
 
-static char	**ft_build_array(char **arr, char const *s, char c)
+static void		ft_freeall(char **ret)
 {
-	size_t	word;
-	char	*arr_write;
-	char	*scpy;
+	int	i;
 
-	scpy = ft_strdup((const char *)s);
-	word = 1;
-	arr_write = *arr;
-	while (*scpy != 0)
+	i = 0;
+	while (ret[i])
 	{
-		if (*scpy == c)
-		{
-			*scpy = '\0';
-			word = 0;
-		}
-		else if (*scpy != c && word == 0)
-		{
-			arr_write = scpy;
-			++arr_write;
-			word = 1;
-		}
-		++scpy;
+		free(ret[i]);
+		i++;
 	}
-	return (arr);
+	free(ret);
+}
+
+static size_t	ft_strnlen(const char *s, size_t max)
+{
+	size_t	int_len;
+
+	int_len = 0;
+	while ((s[int_len] != '\0') || (int_len > max))
+		int_len++;
+	return (int_len);
+}
+
+static char	*ft_strndup(const char *s, size_t n)
+{
+	char	*new;
+	size_t	s_len;
+
+	s_len = ft_strnlen(s, n);
+	new = malloc(sizeof(char) * (s_len + 1));
+	if (!new)
+		return(NULL);
+	ft_strlcpy(new, (char *)s, s_len + 1);
+	return (new);
 }
 
 /*
@@ -63,19 +81,32 @@ static char	**ft_build_array(char **arr, char const *s, char c)
 */
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
-	size_t	tok_n;
+	const char		*p;
+	size_t			splitcnt;
+	char			**ret;
+	char			*end;
+	size_t			i;
 
-	if (*s == 0)
-	{
-		arr = (char **)malloc(sizeof(char *));
-		*arr = NULL;
-		return (arr);
-	}
-	tok_n = ft_countc(s, c);
-	arr = (char **)malloc(sizeof(*arr) * (tok_n + 1));
-	if (!arr)
+	splitcnt = ft_splitcnt(s, c);
+	ret = ft_calloc(splitcnt + 1, sizeof(char *));
+	if (!s || !ret)
 		return (NULL);
-	arr = ft_build_array(arr, s, c);
-	return (arr);
+	i = 0;
+	p = s;
+	while (i < splitcnt)
+	{
+		if (*s != c)
+		{
+			if (!(end = ft_strchr(s, c)))
+				end = (char *)p + ft_strlen(p);
+			if (!(ret[i++] = ft_strndup(s, end - s)))
+			{
+				ft_freeall(ret);
+				return (NULL);
+			}
+			s = end;
+		}
+		s++;
+	}
+	return (ret);
 }
