@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_islower.c                                       :+:      :+:    :+:   */
+/*   ft_islower_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:18:28 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 11:56:11 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 17:34:24 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-* Returns 1 if c is a lowercase alphabetical character
+* Returns 1 if c is a lowercase alphabetical character.
 */
 int	ft_islower(int c)
 {
