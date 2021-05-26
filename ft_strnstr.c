@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/26 13:38:49 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 16:03:01 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,25 @@ if (!s1)
 
 */
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+{
+	size_t	len_s2;
+
+	len_s2 = ft_strlen(s2);
+	if (len_s2 == 0)
+		return ((char *)s1);
+	while (n)
+	{
+		if (ft_strncmp(s1, s2, len_s2) == 0)
+			return ((char *)s1);
+		if (n <= len_s2)
+			break ;
+		++s1,
+		--n;
+	}
+	return (0);
+}
+
+char	*ft_strnstr_auth(const char *s1, const char *s2, size_t n)
 {
 	size_t	len_s2;
 
