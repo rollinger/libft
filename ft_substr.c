@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/19 17:17:44 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 10:00:11 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:27:14 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (!sub)
+	sub = (char *)ft_calloc(sizeof(char), (len + 1));
+	if (!sub || !s)
 		return (NULL);
+	else if (start >= ft_strlen(s))
+		return (sub);
 	ft_strlcpy(sub, (char *)(s + start), len + 1);
 	return (sub);
 }

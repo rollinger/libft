@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 08:56:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 10:58:07 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 08:52:36 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*c1 != *c2)
 			return (*c1 - *c2);
-		if (!*c1 || !*c2)
-			break ;
 		c1++;
 		c2++;
 		n--;

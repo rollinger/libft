@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 11:17:28 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 11:18:53 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 09:26:04 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	dc = ft_countd(n);
 	d = ft_calloc(sizeof(char), (dc + 1));
+	if (!d)
+		return (NULL);
 	r = d;
 	if (n < 0)
 	{

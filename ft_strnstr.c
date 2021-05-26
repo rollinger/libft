@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 13:18:08 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 09:30:08 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	size_t	len_s2;
 
 	len_s2 = ft_strlen(s2);
+	if (!s1)
+		return ((char *)(s1 + 1));
 	if (len_s2 == 0)
 		return ((char *)s1);
 	while (n && n >= len_s2)

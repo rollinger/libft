@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/25 15:14:22 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/26 08:57:32 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,12 @@ sources_bonus = ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 sources_own = ft_isupper_bonus.c ft_islower_bonus.c ft_isspace_bonus.c
 headers = libft.h
 
-OBJS		=	$(sources:.c=.o)
-OBJS_BONUS	=	$(sources_bonus:.c=.o)
-OBJS_OWN	=	$(sources_own:.c=.o)
+OBJS		=	$(sources) #$(sources:.c=.o)
+OBJS_BONUS	=	$(sources_bonus) #$(sources_bonus:.c=.o)
+OBJS_OWN	=	$(sources_own) #$(sources_own:.c=.o)
 
 ifdef WITH_BONUS
-	OBJ_SWITCH = $(OBJS_BONUS)
+	OBJ_SWITCH = $(OBJS) $(OBJS_BONUS)
 else
 	OBJ_SWITCH = $(OBJS)
 endif
@@ -36,10 +36,16 @@ NAME = libft.a
 
 FLAGS = -Wall -Wextra -Werror
 CC = gcc
-LIB = ar rcs #u
+LIB = ar rc #su
 
-$(NAME): $(OBJ_SWITCH) $(OBJS_OWN)
-	$(LIB) $@ $^
+#$(NAME): clean $(OBJ_SWITCH) $(OBJS_OWN)
+#	$(LIB) $@ $^
+
+$(NAME): clean
+	gcc -c -Wall -Wextra -Werror $(OBJ_SWITCH) $(OBJS_OWN)
+	ar rc $(NAME) *.o
+	ranlib $(NAME)
+	rm -f *.o *.gch
 
 all:  bonus $(NAME)
 
@@ -47,12 +53,16 @@ bonus:
 	$(MAKE) WITH_BONUS=1 $(NAME)
 
 clean:
-	rm -f $(OBJS) $(OBJS_BONUS) $(OBJS_OWN)
+	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
 
 re : fclean all
+
+so: clean
+	#$(CC) -fPIC $(FLAGS) $(OBJ_SWITCH:.o=.c) $(OBJS_OWN:.o=.c)
+	gcc -shared -o libft.so $(OBJ_SWITCH) $(OBJS_OWN)
 
 .PHONY:	all clean fclean re bonus
 #

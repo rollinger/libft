@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:11:09 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 11:31:53 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:05:54 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	new = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!new)
 		return (NULL);

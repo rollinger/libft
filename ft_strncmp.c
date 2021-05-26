@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:11:46 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 12:33:03 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:24:27 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,20 @@
 */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return (ft_memcmp((void *)s1, (void *)s2, n));
+	const unsigned char	*c1;
+	const unsigned char	*c2;
+
+	c1 = (const unsigned char *)s1;
+	c2 = (const unsigned char *)s2;
+	while (n)
+	{
+		if (*c1 != *c2)
+			return (*c1 - *c2);
+		if (!*c1 || !*c2)
+			break ;
+		c1++;
+		c2++;
+		n--;
+	}
+	return (0);
 }

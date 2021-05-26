@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 10:10:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 17:49:05 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/25 20:15:53 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static size_t	ft_strclen(const char *s, char c)
 
 /*
 * Helper function: walking through s and calloc'ing and memcpy'ing the blocks
-* into the **arr. Due to calloc the \0 is there and we can use just memcpy. 
+* into the **arr. Due to calloc the \0 is there and we can use just memcpy.
 * [1,2]; 1=>"blck1\0" 2=>"blck2\0"
 */
 static char	**ft_split_words(char **arr, const char *s, const char c)
