@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/26 13:47:05 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/26 16:50:14 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,6 @@ FLAGS = -Wall -Wextra -Werror
 CC = gcc
 LIB = ar rc #su
 
-#$(NAME): clean $(OBJ_SWITCH) $(OBJS_OWN)
-#	$(LIB) $@ $^
-
 $(NAME): clean
 	gcc -c -Wall -Wextra -Werror $(OBJ_SWITCH) $(OBJS_OWN)
 	ar rc $(NAME) *.o
@@ -65,20 +62,3 @@ so: clean
 	gcc -shared -o libft.so $(OBJS) $(OBJS_BONUS) $(OBJS_OWN)
 
 .PHONY:	all clean fclean re bonus
-#
-#so :
-#	gcc -fPIC $(FLAGS) $()
-#	gcc -shared -o libft.so $(objects)
-#
-#bonus : prerequisites
-#	receipt
-#
-#test : prerequisites
-#	receipt
-#$(NAME):
-#	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources)
-#	#ar rcu $(NAME)
-#
-#bonus:
-#	gcc -shared $(FLAGS) -o $(NAME) $(headers) $(sources) $(sources_bonus)
-#	#ar rcu $(NAME)

@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 08:56:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/26 15:23:55 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 16:28:47 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 * difference the first pair of bytes (interpreted as unsigned char) that
 * differ in s1 and s2.
 * If n is zero, the return value is zero.
-* -1 => s1<s2
+* <-1 => s1<s2
 *  0 => s1=s2
-* +1 => s1>s2
+* >+1 => s1>s2
 */
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
