@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 11:37:48 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 08:09:44 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:24:03 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 * src are first copied into a temporary array that does not overlap src or dest,
 * and the bytes are then copied from the temporary array to dest. The memmove()
 * function returns a pointer to dest.
-*
 * memcpy if dest has enough space (dest-src >= n)
 * otherwise a reverse write [dest <<< src] from position n to 0.
 */

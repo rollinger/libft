@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 11:48:12 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/26 08:37:27 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:23:49 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 * dest. The memory areas must not overlap.  Use memmove(3) if the memory areas
 * do overlap. The memcpy() function returns a pointer to dest.
 */
-
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*m;

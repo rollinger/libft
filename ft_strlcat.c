@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 22:06:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/25 09:45:21 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:24:45 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 * dst is longer than dstsize bytes when strlcat() is called, the string pointed
 * to by dst will not be changed.
 * The function returns min{dstsize,strlen(dst)}+ strlen(src)
-*
 */
 static int	min(int a, int b)
 {

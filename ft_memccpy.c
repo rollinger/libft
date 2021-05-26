@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 13:27:05 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/20 12:53:18 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:23:34 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 * The memccpy() function returns a pointer to the next character in dest after
 * c, or NULL if c was not found in the first n characters of src.
 */
-
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	unsigned char	*m;

@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 08:56:01 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/26 08:52:36 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:23:55 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 * an integer less than, equal to, or greater than zero if the first n bytes of
 * s1 is found, respectively, to be less than, to match, or be greater than the
 * first n bytes of s2.
-
 * For a nonzero return value, the sign is determined by the sign of the between
 * difference the first pair of bytes (interpreted as unsigned char) that
 * differ in s1 and s2.
