@@ -6,7 +6,7 @@
 #    By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/15 17:05:05 by prolling          #+#    #+#              #
-#    Updated: 2021/05/26 08:57:32 by prolling         ###   ########.fr        #
+#    Updated: 2021/05/26 13:47:05 by prolling         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ re : fclean all
 
 so: clean
 	#$(CC) -fPIC $(FLAGS) $(OBJ_SWITCH:.o=.c) $(OBJS_OWN:.o=.c)
-	gcc -shared -o libft.so $(OBJ_SWITCH) $(OBJS_OWN)
+	gcc -shared -o libft.so $(OBJS) $(OBJS_BONUS) $(OBJS_OWN)
 
 .PHONY:	all clean fclean re bonus
 #

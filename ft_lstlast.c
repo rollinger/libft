@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 20:44:38 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/21 14:14:59 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 14:44:45 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 */
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return ((void *)0);
 	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);

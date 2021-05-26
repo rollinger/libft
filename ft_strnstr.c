@@ -6,7 +6,7 @@
 /*   By: prolling <prolling@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/18 21:50:59 by prolling          #+#    #+#             */
-/*   Updated: 2021/05/26 13:32:07 by prolling         ###   ########.fr       */
+/*   Updated: 2021/05/26 13:38:49 by prolling         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 * The strnstr() function locates the first occurrence of the null-terminated
 * string s2 in the string s1, where not more than n characters are searched.
 * Characters that appear after a ‘\0’ character are not searched
+if (!s1)
+	return ((char *)(s1 + 1));
+
 */
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
